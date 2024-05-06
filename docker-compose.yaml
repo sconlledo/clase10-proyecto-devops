@@ -5,6 +5,7 @@ services:
     ports:
       - "3000:3000"
     environment:
-      - NODE_ENV=development
+      - AMBIENTE=development
+      - API_KEY=112233445566778899
     volumes:
       - /tmp/ficheros-contenedor:/var/ficheros

@@ -6,6 +6,11 @@ services:
       - "3000:3000"
     environment:
       - AMBIENTE=development
-      - API_KEY=112233445566778899
+      - API_KEY= /run/secrets/api-key
+    secrets:
+      - api-key
     volumes:
       - /tmp/ficheros-contenedor:/var/ficheros
+secrets:
+   api-key:
+     file: key.txt

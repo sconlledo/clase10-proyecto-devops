@@ -7,8 +7,8 @@ services:
     environment:
       - AMBIENTE=development
       - API_KEY=/run/secrets/api-key
-    # secrets:
-    #   - api-key
-# secrets:
-#    api-key:
-#      file: key.txt
+    secrets:
+      - api-key
+secrets:
+   api-key:
+     file: api-key.txt

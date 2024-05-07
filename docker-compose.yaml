@@ -4,13 +4,13 @@ services:
     restart: always
     ports:
       - "3000:3000"
+    volumes:
+      - /tmp/ficheros-contenedor:/var/ficheros
     environment:
       - AMBIENTE=development
       - API_KEY= /run/secrets/api-key
     secrets:
       - api-key
-    volumes:
-      - /tmp/ficheros-contenedor:/var/ficheros
 secrets:
    api-key:
      file: key.txt

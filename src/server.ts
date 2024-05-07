@@ -6,7 +6,7 @@ import { dividir, multiplicar, restar, sumar } from "./calcular.js";
 const app = express();
 
 const ambiente = process.env.AMBIENTE || "desconocido";
-const apiKey = process.env.API_KEY || "desconocido";
+const apiKey = process.env.API_KEY || '';
 
 app.use(express.json());
 
@@ -34,7 +34,7 @@ app.get("/info", (req, res) => {
 
 
 app.get("/api", (req, res) => {
-  const miVariable = fs.readFileSync('/run/secrets/key.txt', 'utf8');
+  const miVariable = fs.readFileSync(apiKey, 'utf8');
   res.send(`El apiKey es: ${miVariable}`);
 });
 

@@ -5,8 +5,8 @@ services:
     ports:
       - "3000:3000"
     environment:
-      - AMBIENTE=development
-      - API_KEY=/run/secrets/api-key
+      - AMBIENTE: development
+      - API_KEY: /run/secrets/api-key
     secrets:
       - api-key
 secrets:

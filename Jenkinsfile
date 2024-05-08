@@ -58,9 +58,9 @@ pipeline {
                 script {
                     docker.withRegistry('http://localhost:8082', 'nexus-key') {
                         sh 'docker build -t localhost:8082/clase10-proyecto-devops .'
-                        // sh "docker tag localhost:8082/clase10-proyecto-devops localhost:8082/clase10-proyecto-devops:${env.BRANCH_NAME}-${env.BUILD_NUMBER}"
+                        sh "docker tag localhost:8082/clase10-proyecto-devops localhost:8082/clase10-proyecto-devops:${env.BRANCH_NAME}-${env.BUILD_NUMBER}"
                         sh 'docker push localhost:8082/clase10-proyecto-devops'
-                        // sh "docker push localhost:8082/clase10-proyecto-devops:${env.BRANCH_NAME}-${env.BUILD_NUMBER}"
+                        sh "docker push localhost:8082/clase10-proyecto-devops:${env.BRANCH_NAME}-${env.BUILD_NUMBER}"
                     }
                 }
             }
